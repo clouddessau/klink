@@ -404,7 +404,7 @@ h6 {
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 
 dfn,
@@ -481,6 +481,23 @@ body {
 	padding: 2rem;
 	color: #f9ed62;
 	background-color: #6c2cfe;
+}
+
+.site-footer .site-organizer p {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-weight: bold;
+}
+
+.site-footer .site-organizer .site-organizer-logo {
+	margin: 0;
+	height: 8rem;
+	background-color: #f9ed62;
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+	display: block;
 }
 
 hr {

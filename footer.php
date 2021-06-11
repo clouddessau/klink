@@ -14,7 +14,7 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-organizer">
 			<p>veranstaltet durch</p>
-			
+			<a href="http://dessau-vorort.de" class="site-organizer-logo" style="mask-image: url('<?php echo get_theme_file_uri('assets/images/vorort_logo.svg'); ?>'); -webkit-mask-image: url('<?php echo get_theme_file_uri('assets/images/vorort_logo.svg'); ?>');"></a>
 		</div>
 		<div class="site-info">
 			

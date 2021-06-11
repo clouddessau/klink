@@ -50,7 +50,8 @@ if ( ! function_exists( 'klink_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'klink' ),
+				'main-menu' => __( 'Main Menu' ),
+				'footer-menu' => __( 'Footer Menu' )
 			)
 		);
 
@@ -72,7 +73,7 @@ if ( ! function_exists( 'klink_setup' ) ) :
 		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support(
+		/* add_theme_support(
 			'custom-background',
 			apply_filters(
 				'klink_custom_background_args',
@@ -81,7 +82,7 @@ if ( ! function_exists( 'klink_setup' ) ) :
 					'default-image' => '',
 				)
 			)
-		);
+		); */
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -92,13 +93,7 @@ if ( ! function_exists( 'klink_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
+			'custom-logo'
 		);
 	}
 endif;
