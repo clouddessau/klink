@@ -2,4 +2,23 @@
   padding: $padding__blocks-desktop;
   color: $color__klink-yellow;
   background-color: $color__klink-purple;
+
+  .site-organizer {
+    p {
+      margin-top: 0;
+      margin-bottom: .5em;
+      font-weight: bold;
+    }
+
+    .site-organizer-logo {
+      margin: 0;
+      height: 8rem;
+      background-color: $color__klink-yellow;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      display: block
+    }
+  }
 }
