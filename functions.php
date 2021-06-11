@@ -92,13 +92,7 @@ if ( ! function_exists( 'klink_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
+			'custom-logo'
 		);
 	}
 endif;
