@@ -2,6 +2,27 @@
   padding: $padding__blocks-desktop;
   color: $color__klink-yellow;
   background-color: $color__klink-purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  & > div {
+    margin-bottom: 3rem;
+
+    &:last-child {
+      margin-bottom: 0
+    }
+  }
+
+  a {
+    color: $color__klink-yellow;
+    text-decoration: none;
+
+    &:hover {
+      color: $color__klink-yellow
+    }
+  }
 
   .site-organizer {
     p {
@@ -19,6 +40,29 @@
       -webkit-mask-size: contain;
       -webkit-mask-repeat: no-repeat;
       display: block
+    }
+  }
+
+  .site-info {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        font-weight: bold;
+        text-transform: lowercase
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint__desktop) {
+  .site-footer {
+    flex-direction: row;
+
+    & > div {
+      margin-bottom: 0
     }
   }
 }
