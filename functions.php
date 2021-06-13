@@ -95,6 +95,11 @@ if ( ! function_exists( 'klink_setup' ) ) :
 		add_theme_support(
 			'custom-logo'
 		);
+
+		/**
+		 * Remove pre-defined core block patterns
+		 */
+		remove_theme_support( 'core-block-patterns' );
 	}
 endif;
 add_action( 'after_setup_theme', 'klink_setup' );
