@@ -477,6 +477,10 @@ body {
 	display: block;
 }
 
+.site-main {
+	padding: 2rem;
+}
+
 .site-footer {
 	padding: 2rem;
 	color: #f9ed62;
