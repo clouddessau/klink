@@ -20,7 +20,17 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
 		</div>
 		<div class="site-social">
-
+			<ul>
+				<li>
+					<a href="https://instagram.com/klink_festival_dessau" title="Instagram" style="mask-image: url('<?php echo get_theme_file_uri('assets/images/instagram.png'); ?>'); -webkit-mask-image: url('<?php echo get_theme_file_uri('assets/images/instagram.png'); ?>');"></a>
+				</li>
+				<li>
+					<a href="#" title="Facebook" style="mask-image: url('<?php echo get_theme_file_uri('assets/images/facebook.png'); ?>'); -webkit-mask-image: url('<?php echo get_theme_file_uri('assets/images/facebook.png'); ?>');"></a>
+				</li>
+				<li>
+					<a href="#" title="E-Mail" style="mask-image: url('<?php echo get_theme_file_uri('assets/images/mail.png'); ?>'); -webkit-mask-image: url('<?php echo get_theme_file_uri('assets/images/mail.png'); ?>');"></a>
+				</li>
+			</ul>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

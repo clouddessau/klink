@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 
   & > div {
@@ -22,6 +23,12 @@
     &:hover {
       color: $color__klink-yellow
     }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none
   }
 
   .site-organizer {
@@ -44,14 +51,25 @@
   }
 
   .site-info {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+    li {
+      font-weight: bold;
+      text-transform: lowercase
+    }
+  }
 
-      li {
-        font-weight: bold;
-        text-transform: lowercase
+  .site-social {
+    li {
+      margin-bottom: .5em;
+      
+      a {
+        width: 1.75rem;
+        height: 1.75rem;
+        background-color: $color__klink-yellow;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        display: block
       }
     }
   }
