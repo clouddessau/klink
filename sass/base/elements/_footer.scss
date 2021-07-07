@@ -1,5 +1,5 @@
 .site-footer {
-  padding: $padding__blocks-desktop;
+  padding: var(--padding__blocks);
   color: $color__klink-yellow;
   background-color: $color__klink-purple;
   display: flex;

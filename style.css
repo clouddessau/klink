@@ -49,6 +49,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 @import url("https://use.typekit.net/njo5rqq.css");
+:root {
+	--padding__blocks: 1rem;
+}
+
+@media (min-width: 800px) {
+	:root {
+		--padding__blocks: 2rem
+  ;
+	}
+}
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -462,27 +473,40 @@ body {
 }
 
 .site-header {
-	padding: 2rem;
 	display: flex;
 	justify-content: space-between;
-	align-items: baseline;
+	align-items: stretch;
+}
+
+.site-header #site-navigation, .site-header #site-branding {
+	padding: var(--padding__blocks);
 }
 
 .site-header .site-logo {
 	display: block;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 .site-header .site-logo img {
 	height: 4rem;
+	max-width: 30vw;
 	display: block;
 }
 
+@media (min-width: 800px) {
+	.site-header #site-navigation {
+		order: 1;
+	}
+}
+
 .site-main {
-	padding: 2rem;
+	padding: var(--padding__blocks);
 }
 
 .site-footer {
-	padding: 2rem;
+	padding: var(--padding__blocks);
 	color: #f9ed62;
 	background-color: #6c2cfe;
 	display: flex;
@@ -718,139 +742,126 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-.main-navigation {
-	display: block;
-	/*ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
-
-	li {
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}*/
+#site-navigation {
+	position: relative;
+	flex-basis: 50%;
+	display: flex;
+	align-items: center;
 }
 
-.main-navigation ul {
+#main-navigation {
+	top: 100%;
+	left: 0;
+	position: absolute;
+	width: 100vw;
+	display: none;
+}
+
+#main-navigation ul {
+	margin: 0;
+	padding: 1em calc(var(--padding__blocks) * 1.5);
 	list-style: none;
 	text-transform: lowercase;
+	background-color: #6c2cfe;
 }
 
-.main-navigation ul li {
-	margin-right: 1.5em;
+#main-navigation ul li {
+	padding: 1em 0;
 }
 
-.main-navigation ul li:last-child {
-	margin-right: 0;
-}
-
-.main-navigation ul li.current_page_item a {
-	color: #6c2cfe;
-}
-
-.main-navigation ul li a {
-	color: #000;
+#main-navigation ul li a {
+	color: #fff;
 	text-decoration: none;
 }
 
-.main-navigation ul li a:hover {
-	color: #6c2cfe;
+#main-navigation ul li a:hover {
+	color: #fff;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+#navigation-checkbox {
+	display: none;
+}
+
+#navigation-checkbox:checked ~ #site-navigation {
+	background-color: #6c2cfe;
+}
+
+#navigation-checkbox:checked ~ #site-navigation label[for=navigation-checkbox] svg line {
+	stroke: #fff;
+}
+
+#navigation-checkbox:checked ~ #site-navigation label[for=navigation-checkbox] svg line:first-child {
+	transform: rotate(45deg);
+}
+
+#navigation-checkbox:checked ~ #site-navigation label[for=navigation-checkbox] svg line:last-child {
+	transform: rotate(-45deg);
+}
+
+#navigation-checkbox:checked ~ #site-navigation label[for=navigation-checkbox] svg line:nth-child(2) {
+	opacity: 0;
+}
+
+#navigation-checkbox:checked ~ #site-navigation #main-navigation {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
+label[for=navigation-checkbox] {
+	padding: calc(var(--padding__blocks) * .5);
+	cursor: pointer;
+}
+
+label[for=navigation-checkbox] svg line {
+	stroke: #6c2cfe;
+	stroke-width: 3px;
+	transform-origin: center;
+	transition: all .2s ease;
+}
+
+label[for=navigation-checkbox] svg line:first-child {
+	transform: translateY(-8px);
+}
+
+label[for=navigation-checkbox] svg line:last-child {
+	transform: translateY(8px);
+}
+
+@media (min-width: 800px) {
+	#site-navigation {
+		justify-content: flex-end;
+		align-items: flex-end;
 	}
-	.main-navigation ul {
+	#main-navigation {
+		top: unset;
+		left: unset;
+		position: inherit;
+		width: auto;
+		display: block;
+	}
+	#main-navigation ul {
+		padding: 0;
+		background: none;
 		display: flex;
 	}
-}
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-}
-
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-	display: flex;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	flex: 1 0 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
+	#main-navigation ul li {
+		margin-right: 1.5em;
+		padding: 0;
+	}
+	#main-navigation ul li:last-child {
+		margin-right: 0;
+	}
+	#main-navigation ul li.current_page_item > a {
+		color: #6c2cfe;
+	}
+	#main-navigation ul li a {
+		color: #000;
+	}
+	#main-navigation ul li a:hover {
+		color: #6c2cfe;
+	}
+	label[for=navigation-checkbox] {
+		display: none;
+	}
 }
 
 /* Posts and pages
