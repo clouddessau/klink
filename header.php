@@ -26,7 +26,21 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'klink' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
+		<input type="checkbox" id="navigation-checkbox" role="button">
+		<div id="site-navigation">
+			<label for="navigation-checkbox">
+				<svg width="24" height="24">
+				<line x1="0" y1="12" x2="24" y2="12"></line>
+					<line x1="0" y1="12" x2="24" y2="12"></line>
+					<line x1="0" y1="12" x2="24" y2="12"></line>
+				</svg>
+			</label>
+			<nav id="main-navigation">
+				<!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'klink' ); ?></button>-->
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+			</nav><!-- #site-navigation -->
+		</div>
+		<div id="site-branding">
 			<a class="site-logo" href="<?php echo esc_url( home_url('/') ); ?>" rel="home">
 				<?php
 					if ( has_custom_logo() ) {
@@ -39,9 +53,4 @@
 				?>
 			</a>
 		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'klink' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

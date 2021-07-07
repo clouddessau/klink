@@ -1,15 +1,30 @@
 .site-header {
-	padding: var(--padding__blocks);
 	display: flex;
 	justify-content: space-between;
-	align-items: baseline;
+	align-items: stretch;
+
+	#site-navigation, #site-branding {
+		padding: var(--padding__blocks)
+	}
 
 	.site-logo {
 		display: block;
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
 	
 		img {
 			height: 4rem;
+			max-width: 30vw;
 			display: block;
+		}
+	}
+}
+
+@media (min-width: $breakpoint__desktop) {
+	.site-header {
+		#site-navigation {
+			order: 1
 		}
 	}
 }
