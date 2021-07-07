@@ -1,5 +1,5 @@
 .site-header {
-	padding: $padding__blocks-desktop;
+	padding: var(--padding__blocks);
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
