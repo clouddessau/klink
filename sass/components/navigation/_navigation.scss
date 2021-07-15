@@ -11,6 +11,10 @@
 	position: absolute;
 	width: 100vw;
 	display: none;
+	z-index: 1;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 
 	ul {
 		margin: 0;
