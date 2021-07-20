@@ -932,8 +932,7 @@ label[for=navigation-checkbox] svg line:last-child {
 	display: block;
 }
 
-.post,
-.page {
+.post {
 	margin: 0 0 1.5em;
 }
 
